@@ -36,9 +36,7 @@ export class App extends Component {
 
   delButtonClickHandle = contactId =>
     this.setState(prevState => ({
-      contacts: prevState.contacts.filter(
-        contact => contact.id !== contactId
-      ),
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
 
   filteredContacts = () => {
@@ -49,10 +47,7 @@ export class App extends Component {
   };
   componentDidUpdate(prevProps, prevState) {
     if (this.state.contacts !== prevState.contact) {
-      localStorage.setItem(
-        'contacts',
-        JSON.stringify(this.state.contacts)
-      );
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
   }
   componentDidMount() {
@@ -90,3 +85,5 @@ export class App extends Component {
     );
   }
 }
+
+export default App;
